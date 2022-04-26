@@ -6,7 +6,7 @@
 #    By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 08:33:13 by pfrances          #+#    #+#              #
-#    Updated: 2022/04/23 19:36:32 by pfrances         ###   ########.fr        #
+#    Updated: 2022/04/27 00:04:00 by pfrances         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
-bonus: $(NAME)
+bonus:
 	make all WITH_BONUS=TRUE
 
 clean:
