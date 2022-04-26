@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:14:28 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/26 20:35:06 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/26 21:35:38 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned char	*s1_cpy;
 	char			*result;
 	size_t			result_length;
-	// size_t			i;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
@@ -63,13 +62,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (result == NULL)
 		return (NULL);
 	s1_cpy = str_skip(s1_cpy, tab);
-	ft_strlcpy(result, s1_cpy, result_length + 1);
-	// i = 0;
-	// while (i < result_length)
-	// {
-	// 	result[i] = (char)s1_cpy[i];
-	// 	i++;
-	// }
-	// result[i] = '\0';
+	ft_strlcpy(result, (char *)s1_cpy, result_length + 1);
 	return (result);
 }
