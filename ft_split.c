@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 19:07:05 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/26 21:35:28 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/26 22:03:25 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	str_fill_and_jump(char **dest, char *src, char c)
 	*dest = malloc(sizeof(char) * (i + 1));
 	if (*dest == NULL)
 		return (0);
-	ft_strlcpy(dest, src + start, i + 1);
+	ft_strlcpy(*dest, src + start, i + 1);
 	return (start + i);
 }
 
