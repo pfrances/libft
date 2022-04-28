@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 16:27:17 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/25 18:36:32 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/29 00:22:31 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	else if (start > ft_strlen(s) || len == 0)
+	else if (len == 0 || start > ft_strlen(s))
 		return (ft_strdup(""));
 	substr_size = ft_strlen(s + start);
 	if (substr_size > len)

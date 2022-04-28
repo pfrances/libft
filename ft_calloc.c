@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:58:38 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/26 20:41:46 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/29 00:24:53 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*ptr;
+	size_t	total_size;
 
 	if (size != 0 && nmemb > __SIZE_MAX__ / size)
 		return (NULL);
-	ptr = malloc(nmemb * size);
+	total_size = nmemb * size;
+	if (total_size == 0)
+		total_size = 1;
+	ptr = malloc(total_size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, nmemb * size);
+	ft_bzero(ptr, total_size);
 	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 20:37:04 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/25 19:13:04 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/29 00:27:49 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*top;
 	t_list	*new;
 
-	if (f == NULL)
+	if (f == NULL || lst == NULL)
 		return (NULL);
 	new = NULL;
 	top = new;

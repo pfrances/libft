@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 08:40:13 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/23 19:55:26 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/28 21:22:55 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (str[i] != 0)
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }

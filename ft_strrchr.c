@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 15:18:34 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/20 16:36:24 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/29 01:01:55 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,17 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*chr_localisation;
-	char	*ptr;
 	char	converted_c;
 
 	chr_localisation = NULL;
-	ptr = (char *)s;
 	converted_c = (char)c;
-	while (*ptr != '\0')
+	while (*s != '\0')
 	{
-		if (*ptr == converted_c)
-			chr_localisation = ptr;
-		ptr++;
+		if (*s == converted_c)
+			chr_localisation = s;
+		s++;
 	}
 	if (converted_c == '\0')
-		chr_localisation = ptr;
+		chr_localisation = s;
 	return (chr_localisation);
 }

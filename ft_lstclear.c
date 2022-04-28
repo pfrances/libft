@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:07:03 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/25 19:11:08 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/29 00:18:48 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}
-	lst = NULL;
 }

@@ -6,14 +6,14 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 19:07:05 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/26 22:03:25 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/29 00:48:15 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static size_t	nbrs_ptr_calculate(char	*str, char c)
+static size_t	nbrs_ptr_calculate(const char *str, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -29,16 +29,16 @@ static size_t	nbrs_ptr_calculate(char	*str, char c)
 	return (count);
 }
 
-static int	str_fill_and_jump(char **dest, char *src, char c)
+static size_t	str_fill_and_jump(char **dest, const char *src, char c)
 {
 	size_t	start;
 	size_t	i;
 
 	start = 0;
-	while (src[start] == c)
+	while (src[start] != '\0' && src[start] == c)
 		start++;
 	i = 0;
-	while (src[start + i] != c && src[start + i] != '\0')
+	while (src[start + i] != '\0' && src[start + i] != c)
 		i++;
 	*dest = malloc(sizeof(char) * (i + 1));
 	if (*dest == NULL)
@@ -47,7 +47,7 @@ static int	str_fill_and_jump(char **dest, char *src, char c)
 	return (start + i);
 }
 
-static char	**free_previous_str(char *tab[], size_t	size)
+static char	**free_previous_str(char **tab, size_t	size)
 {
 	size_t	i;
 
@@ -64,25 +64,25 @@ static char	**free_previous_str(char *tab[], size_t	size)
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	char	*s_cpy;
-	int		jump;
+	//char	*s_cpy;
+	size_t	jump;
 	size_t	nbrs_ptr;
 	size_t	i;
 
 	if (s == NULL)
 		return (NULL);
-	s_cpy = (char *)s;
-	nbrs_ptr = nbrs_ptr_calculate(s_cpy, c);
+	//s_cpy = (char *)s;
+	nbrs_ptr = nbrs_ptr_calculate(s, c);
 	result = malloc(sizeof(char *) * (nbrs_ptr + 1));
 	if (result == NULL)
 		return (NULL);
 	i = 0;
 	while (i < nbrs_ptr)
 	{
-		jump = str_fill_and_jump(&result[i], s_cpy, c);
+		jump = str_fill_and_jump(&result[i], s, c);
 		if (jump == 0)
 			return (free_previous_str(result, i));
-		s_cpy += jump;
+		s += jump;
 		i++;
 	}
 	result[i] = NULL;
