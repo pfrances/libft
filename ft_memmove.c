@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 15:10:24 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/29 00:39:41 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/29 13:15:08 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			if (i < n)
 				dest_bytes[i] = src_bytes[i];
 		}
-		// if (i == 0)
-		// 	dest_bytes[i] = src_bytes[i];
 	}
 	return (dest);
 }

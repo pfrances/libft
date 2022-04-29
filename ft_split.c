@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 19:07:05 by pfrances          #+#    #+#             */
-/*   Updated: 2022/04/29 00:48:15 by pfrances         ###   ########.fr       */
+/*   Updated: 2022/04/29 13:56:53 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,12 @@ static char	**free_previous_str(char **tab, size_t	size)
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	//char	*s_cpy;
 	size_t	jump;
 	size_t	nbrs_ptr;
 	size_t	i;
 
 	if (s == NULL)
 		return (NULL);
-	//s_cpy = (char *)s;
 	nbrs_ptr = nbrs_ptr_calculate(s, c);
 	result = malloc(sizeof(char *) * (nbrs_ptr + 1));
 	if (result == NULL)
